@@ -10,3 +10,4 @@ após um numero maximo de erros, o jogador perde
 o jogo continua ate que o jogador adivinhe a palavra ou exceda o numero maximo de tentativas
 dica: vc precisara importar uma biblioteca para resolver esse exercício'''
 
+#so p testar o comando "git commit -am"
