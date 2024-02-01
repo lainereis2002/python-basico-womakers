@@ -10,4 +10,41 @@ após um numero maximo de erros, o jogador perde
 o jogo continua ate que o jogador adivinhe a palavra ou exceda o numero maximo de tentativas
 dica: vc precisara importar uma biblioteca para resolver esse exercício'''
 
-#so p testar o comando "git commit -am"
+import random
+vidas = 6
+lista = ("BANANA", "MACA", "MARACUJA", "GOIABA", "LARANJA")
+palavra_sorteada = random.choice(lista)
+digitadas = []
+ganhou = False
+
+while True:
+    print("\n")
+    for letra in palavra_sorteada:
+        if letra in digitadas:
+            print(letra, end=" ")
+        else:
+            print("_", end=" ")
+
+    letra = input("\nDigite uma letra: ").upper()
+    digitadas.append(letra)
+
+    if len(letra)>1:
+        print("ERROR: apenas uma letra por vez pode ser digitada")
+        continue
+
+    if letra not in palavra_sorteada:
+        vidas -= 1
+        print(f"Você tem {vidas} vidas restantes")
+
+    ganhou = all(letra in digitadas for letra in palavra_sorteada)
+
+    if vidas == 0 or ganhou:
+        break
+
+if ganhou:
+    print(f"\nParabéns, você ganhou!!! A palavra era {palavra_sorteada}")
+else:
+    print(f"\nVocê perdeu :( a palavra era {palavra_sorteada}")
+
+
+
