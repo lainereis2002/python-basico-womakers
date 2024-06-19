@@ -14,9 +14,6 @@ def exibir_opcoes():
     print('4. Sair\n')
 
 def finalizar_programa():
-    #os.system('cls') #limpar terminal no windows
-    #os.system('clear') #limpar terminal no linux
-    #print('Finalizando o programa')
     exibir_subtitulo("Finalizando Programa...")
 
 def voltar_ao_menu():
